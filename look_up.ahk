@@ -1,7 +1,9 @@
-﻿; alt+g : open highlighted text in browser and do google search / visit site (if it's url)
+﻿; FileCreateShortcut, %A_ScriptFullPath%, %A_Startup%\look_up.lnk ; create shortcut in startup folder
+; FileDelete, %A_Startup%\look_up.lnk
+; alt+g : open highlighted text in browser and do google search / visit site (if it's url)
 
 
-; run script as admin (reload if not as admin) 
+; run script as admin (reload if not as admin)
 if not A_IsAdmin
 {
    Run *RunAs "%A_ScriptFullPath%"  ; Requires v1.0.92.01+
@@ -16,7 +18,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 SetTitleMatchMode 2
 
 
-!g::
+#+c::
 MyClip := ClipboardAll
 Clipboard = ; empty the clipboard
 Send, ^c
@@ -29,7 +31,7 @@ if RegExMatch(Clipboard, "^[^ ]*\.[^ ]*$")
 {
     Run "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" %Clipboard%
 }
-else  
+else
 {
     ; Modify some characters that screw up the URL
     ; RFC 3986 section 2.2 Reserved Characters (January 2005):  !*'();:@&=+$,/?#[]
@@ -65,7 +67,7 @@ GetText(ByRef MyText = "")
 ; Pastes text from a variable while preserving the clipboard.
 PutText(MyText)
 {
-   SavedClip := ClipboardAll 
+   SavedClip := ClipboardAll
    Clipboard =              ; For better compatability
    Sleep 20                 ; with Clipboard History
    Clipboard := MyText
@@ -74,4 +76,3 @@ PutText(MyText)
    Clipboard := SavedClip
    Return
 }
-

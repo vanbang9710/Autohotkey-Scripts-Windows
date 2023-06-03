@@ -1,3 +1,4 @@
+; FileCreateShortcut, %A_ScriptFullPath%, %A_Startup%\battery_alert.lnk ; create shortcut in startup folder
 ; Battery notification
 ;
 ; When the battery is charged, a notification
@@ -6,7 +7,7 @@
 ; When the battery is below 30%, a notification
 ; will appear to tell the user to plug in the charger
 
-; run script as admin (reload if not as admin) 
+; run script as admin (reload if not as admin)
 if not A_IsAdmin
 {
    Run *RunAs "%A_AhkPath%" "%A_ScriptFullPath%"  ; Requires v1.0.92.01+
@@ -21,11 +22,11 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 SetTitleMatchMode 2
 
 ; set desired low battery percentage to get alert
-lowBatteryPercentage := 90
+lowBatteryPercentage := 15
 ;
 
 sleepTime := 60
-chargedPercentage := 99
+chargedPercentage := 999
 percentage := "%"
 
 Loop{ ;Loop forever
@@ -38,7 +39,7 @@ acLineStatus:=ReadInteger(&powerstatus,0)
 batteryLifePercent:=ReadInteger(&powerstatus,2)
 
 ;Is the battery charged higher than 99%
-if (batteryLifePercent > chargedPercentage){ ;Yes. 
+if (batteryLifePercent > chargedPercentage){ ;Yes.
 
 	if (acLineStatus == 1){ ;Only notify me once
 		if (batteryLifePercent == 255){
@@ -58,7 +59,7 @@ if (batteryLifePercent > chargedPercentage){ ;Yes.
 	}
 }
 
-if (batteryLifePercent < lowBatteryPercentage){ ;Yes. 
+if (batteryLifePercent < lowBatteryPercentage){ ;Yes.
 
 	if (acLineStatus == 0){ ;Only notify me once
 		;Format the message box

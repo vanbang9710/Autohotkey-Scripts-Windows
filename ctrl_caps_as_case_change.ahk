@@ -1,7 +1,8 @@
-﻿; ctrl+capslock to show text case change menu 
+﻿; FileCreateShortcut, %A_ScriptFullPath%, %A_Startup%\ctrl_caps_as_case_change.lnk ; create shortcut in startup folder
+; ctrl+capslock to show text case change menu
 
 
-; run script as admin (reload if not as admin) 
+; run script as admin (reload if not as admin)
 
 if not A_IsAdmin
 {
@@ -82,7 +83,7 @@ GetText(ByRef MyText = "")
 ; Pastes text from a variable while preserving the clipboard.
 PutText(MyText)
 {
-   SavedClip := ClipboardAll 
+   SavedClip := ClipboardAll
    Clipboard =              ; For better compatability
    Sleep 20                 ; with Clipboard History
    Clipboard := MyText

@@ -1,7 +1,8 @@
-﻿; WIN key as mouse left click 
+﻿; FileCreateShortcut, %A_ScriptFullPath%, %A_Startup%\mouseless.lnk ; create shortcut in startup folder
+; WIN key as mouse left click
 ; Right Ctrl key as Win key
 
-; run script as admin (reload if not as admin) 
+; run script as admin (reload if not as admin)
 if not A_IsAdmin
 {
    Run *RunAs "%A_ScriptFullPath%"  ; Requires v1.0.92.01+
@@ -15,6 +16,6 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 #SingleInstance Force
 SetTitleMatchMode 2
 
-LWin::LButton
+; LWin::LButton
 
-RCtrl::LWin
+; RCtrl::AppsKey ; bug when ctrl+shift+v

@@ -1,7 +1,8 @@
-﻿; ctrl+shift+p: open powershell at current folder location in file explorer
+﻿FileCreateShortcut, %A_ScriptFullPath%, %A_Startup%\open_shell_here.lnk ; create shortcut in startup folder
+; ctrl+shift+p: open powershell at current folder location in file explorer
 
 
-; run script as admin (reload if not as admin) 
+; run script as admin (reload if not as admin)
 if not A_IsAdmin
 {
    Run *RunAs "%A_ScriptFullPath%"  ; Requires v1.0.92.01+
@@ -32,7 +33,7 @@ If WinActive("ahk_class CabinetWClass") || WinActive("ahk_class ExploreWClass") 
                 Break
             }
     }
-    Run, pwsh, % dir ? dir : A_Desktop
+    Run, "wt.exe", % dir ? dir : A_Desktop
     }
 
 }
