@@ -1,6 +1,4 @@
-﻿; FileCreateShortcut, %A_ScriptFullPath%, %A_Startup%\look_up.lnk ; create shortcut in startup folder
-; FileDelete, %A_Startup%\look_up.lnk
-; alt+g : open highlighted text in browser and do google search / visit site (if it's url)
+﻿; alt+g : open highlighted text in browser and do google search / visit site (if it's url)
 
 
 ; run script as admin (reload if not as admin)

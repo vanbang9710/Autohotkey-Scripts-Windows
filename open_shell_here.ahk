@@ -1,5 +1,4 @@
-﻿FileCreateShortcut, %A_ScriptFullPath%, %A_Startup%\open_shell_here.lnk ; create shortcut in startup folder
-; ctrl+shift+p: open powershell at current folder location in file explorer
+﻿; ctrl+shift+p: open powershell at current folder location in file explorer
 
 
 ; run script as admin (reload if not as admin)

@@ -1,5 +1,4 @@
-﻿; FileCreateShortcut, %A_ScriptFullPath%, %A_Startup%\mouseless.lnk ; create shortcut in startup folder
-; WIN key as mouse left click
+﻿; WIN key as mouse left click
 ; Right Ctrl key as Win key
 
 ; run script as admin (reload if not as admin)

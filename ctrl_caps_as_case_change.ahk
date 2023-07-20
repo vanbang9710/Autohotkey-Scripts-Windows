@@ -1,5 +1,4 @@
-﻿; FileCreateShortcut, %A_ScriptFullPath%, %A_Startup%\ctrl_caps_as_case_change.lnk ; create shortcut in startup folder
-; ctrl+capslock to show text case change menu
+﻿; ctrl+capslock to show text case change menu
 
 
 ; run script as admin (reload if not as admin)

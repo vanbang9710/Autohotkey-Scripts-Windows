@@ -1,4 +1,3 @@
-; FileCreateShortcut, %A_ScriptFullPath%, %A_Startup%\battery_alert.lnk ; create shortcut in startup folder
 ; Battery notification
 ;
 ; When the battery is charged, a notification
