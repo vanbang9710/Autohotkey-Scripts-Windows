@@ -17,8 +17,8 @@ SetTitleMatchMode 2
 
 
 #+c::
-MyClip := ClipboardAll
-Clipboard = ; empty the clipboard
+; MyClip := ClipboardAll
+; Clipboard = ; empty the clipboard
 Send, ^c
 ClipWait, 2
 if ErrorLevel  ; ClipWait timed out.
@@ -40,7 +40,7 @@ else
     StringReplace, Clipboard, Clipboard, ", `%22, All
     Run % "https://www.google.com/search?hl=en&q=" . clipboard ; uriEncode(clipboard)
 }
-Clipboard := MyClip
+; Clipboard := MyClip
 return
 
 ; Handy function.
